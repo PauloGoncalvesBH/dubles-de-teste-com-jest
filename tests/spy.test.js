@@ -5,7 +5,7 @@ describe('Spy', () => {
   Visualizando comportamento interno de um método
   jest.spyOn(object, methodName) - https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname
   */
-  it('Should exit with message when exception is called', () => {
+  it('jest.spyOn(object, methodName) - Visualizando comportamento interno de um método', () => {
     const consoleSpy = jest.spyOn(console, 'error')
     const exitMock = jest.spyOn(process, 'exit').mockImplementation()
 
@@ -20,7 +20,7 @@ describe('Spy', () => {
   Visualizando comportamento interno de um método com tipo de acesso
   jest.spyOn(object, methodName, accessType?) - https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname-accesstype
   */
-  it('Should return "brasileiro" when nacionalidade is called', () => {
+  it('jest.spyOn(object, methodName, accessType?) - Visualizando comportamento interno de um método com tipo de acesso', () => {
     const spy = jest.spyOn(src.pessoa, 'nacionalidade', 'get')
 
     const nacionalidade = src.pessoa.nacionalidade
