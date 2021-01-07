@@ -1,6 +1,5 @@
-# Dublês de teste com [Jest](https://www.npmjs.com/package/jest)
+# Dublês de teste com [Jest](https://www.npmjs.com/package/jest) [![Testes unitários](https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest/workflows/Testes%20unit%C3%A1rios/badge.svg)](https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest/actions)
 
-[![Testes unitários](https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest/workflows/Testes%20unit%C3%A1rios/badge.svg)](https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest/actions)
 ## Sobre
 
 Esse projeto é para servir de material pessoal de consulta de como implementar dublês de testes utilizando Jest.
@@ -8,6 +7,16 @@ Esse projeto é para servir de material pessoal de consulta de como implementar 
 > **Observação:** As asserções não seguem as boas práticas de cada dublê pois foi preciso validar se as alterações de comportamento estão funcionando.
 
 Os testes foram implementados em [`/tests`](/tests), consumindo os métodos de [`/src`](/src) e com mock manual em [`/__mocks__`](/__mocks__).
+
+## Dublês implementados
+
+- Mock, em [./tests/mock.test.js](tests/mock.test.js)
+  - [`Manual Mock`](https://jestjs.io/docs/en/manual-mocks) - Mockando um módulo manualmente
+  - [`mockResolvedValue()`](https://jestjs.io/docs/en/mock-functions#mocking-modules) - Mockando um módulo com mockResolvedValue()
+  - [`mockFn.mockImplementation(fn)`](https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationfn) - Mockando um método
+- Spy, em [./tests/spy.test.js](tests/spy.test.js)
+  - [`jest.spyOn(object, methodName)`](https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname) - Visualizando comportamento interno de um método
+  - [`jest.spyOn(object, methodName, accessType?)`](https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname-accesstype) - Visualizando comportamento interno de um método com tipo de acesso
 
 ## Execução
 
@@ -20,11 +29,6 @@ Execute os testes com:
 ```
 npm test
 ```
-
-## Dublês implementados
-
-- Mock, em [./tests/mock.test.js](tests/mock.test.js)
-- Spy, em [./tests/spy.test.js](tests/spy.test.js)
 
 ## Materiais de apoio
 
