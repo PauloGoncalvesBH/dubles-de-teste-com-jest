@@ -26,9 +26,7 @@ describe('Mock', () => {
   Mocking Modules - https://jestjs.io/docs/en/mock-functions#mocking-modules
   */
   it('mockResolvedValue() - Mockando um módulo com mockResolvedValue()', async () => {
-    jest.mock('axios')
-
-    axios.get.mockResolvedValue({
+    axios.get.mockResolvedValueOnce({
       data: {
         quantidade: 102030,
         usuarios: [
@@ -57,12 +55,32 @@ describe('Mock', () => {
   mockFn.mockImplementation(fn) - https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationfn
   */
   it('mockFn.mockImplementation(fn) - Mockando um método', async () => {
-    const mock = jest.spyOn(src, 'getQuantidadeFromUserByEmail').mockImplementation(() => 99999)
+    const mock = jest.spyOn(src, 'getQuantidadeFromUserByEmail').mockImplementationOnce(() => 99999)
 
     const quantidadeDeUsuarios = await src.getQuantidadeFromUserByEmail('teste@qa.com')
 
     expect(mock).toHaveBeenCalledTimes(1)
     expect(mock).toHaveBeenCalledWith('teste@qa.com')
     expect(quantidadeDeUsuarios).toBe(99999)
+  })
+
+  /*
+  Mockando um método na primeira e segunda chamada
+  mockFn.mockImplementationOnce(fn) - https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationoncefn
+  */
+  it('mockFn.mockImplementationOnce(fn) - Mockando um método na primeira e segunda chamada', async () => {
+    const mock = jest
+      .spyOn(src, 'getQuantidadeFromUserByEmail')
+      .mockImplementationOnce(() => 654321)
+      .mockImplementationOnce(() => 123456)
+
+    const quantidadeDeUsuariosPrimeiraChamada = await src.getQuantidadeFromUserByEmail('teste@qa.com')
+    const quantidadeDeUsuariosSegundaChamada = await src.getQuantidadeFromUserByEmail('teste@qa.com')
+    const quantidadeDeUsuariosTerceiraChamada = await src.getQuantidadeFromUserByEmail('teste@qa.com')
+
+    expect(mock).toHaveBeenCalledTimes(3)
+    expect(quantidadeDeUsuariosPrimeiraChamada).toBe(654321)
+    expect(quantidadeDeUsuariosSegundaChamada).toBe(123456)
+    expect(quantidadeDeUsuariosTerceiraChamada).toBe(5)
   })
 })

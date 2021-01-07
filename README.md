@@ -14,6 +14,8 @@ Os testes foram implementados em [`/tests`](/tests), consumindo os métodos de [
   - [`Manual Mock`](https://jestjs.io/docs/en/manual-mocks) - Mockando um módulo manualmente
   - [`mockResolvedValue()`](https://jestjs.io/docs/en/mock-functions#mocking-modules) - Mockando um módulo com mockResolvedValue()
   - [`mockFn.mockImplementation(fn)`](https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationfn) - Mockando um método
+  - [`mockFn.mockImplementationOnce(fn)`](https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationoncefn) - Mockando um método na primeira 
+e segunda chamada
 - Spy, em [./tests/spy.test.js](tests/spy.test.js)
   - [`jest.spyOn(object, methodName)`](https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname) - Visualizando comportamento interno de um método
   - [`jest.spyOn(object, methodName, accessType?)`](https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname-accesstype) - Visualizando comportamento interno de um método com tipo de acesso
