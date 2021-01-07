@@ -1,0 +1,26 @@
+{
+  "name": "dubles-de-teste-com-jest",
+  "author": "Paulo Gonçalves <paulorochag@hotmail.com> (https://www.linkedin.com/in/paulo-goncalves/)",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest.git"
+  },
+  "scripts": {
+    "test": "jest --collectCoverage true",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "testMatch": [
+      "**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/*.js"
+    ]
+  }
+}
