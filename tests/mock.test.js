@@ -8,7 +8,7 @@ describe('Mock', () => {
   Mockando um módulo manualmente
   Manual Mocks - https://jestjs.io/docs/en/manual-mocks
   */
-  it('Manual Mock - Mockando um módulo manualmente', async () => {
+  test('Manual Mock - Mockando um módulo manualmente', async () => {
     const user = await src.getUserByEmail('teste@qa.com')
 
     expect(axios.get).toHaveBeenCalledTimes(1)
@@ -25,7 +25,7 @@ describe('Mock', () => {
   Mockando um módulo com mockResolvedValue()
   Mocking Modules - https://jestjs.io/docs/en/mock-functions#mocking-modules
   */
-  it('mockResolvedValue() - Mockando um módulo com mockResolvedValue()', async () => {
+  test('mockResolvedValue() - Mockando um módulo com mockResolvedValue()', async () => {
     axios.get.mockResolvedValueOnce({
       data: {
         quantidade: 102030,
@@ -54,7 +54,7 @@ describe('Mock', () => {
   Mockando um método
   mockFn.mockImplementation(fn) - https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationfn
   */
-  it('mockFn.mockImplementation(fn) - Mockando um método', async () => {
+  test('mockFn.mockImplementation(fn) - Mockando um método', async () => {
     const mock = jest.spyOn(src, 'getQuantidadeFromUserByEmail').mockImplementationOnce(() => 99999)
 
     const quantidadeDeUsuarios = await src.getQuantidadeFromUserByEmail('teste@qa.com')
@@ -68,7 +68,7 @@ describe('Mock', () => {
   Mockando um método na primeira e segunda chamada
   mockFn.mockImplementationOnce(fn) - https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationoncefn
   */
-  it('mockFn.mockImplementationOnce(fn) - Mockando um método na primeira e segunda chamada', async () => {
+  test('mockFn.mockImplementationOnce(fn) - Mockando um método na primeira e segunda chamada', async () => {
     const mock = jest
       .spyOn(src, 'getQuantidadeFromUserByEmail')
       .mockImplementationOnce(() => 654321)
