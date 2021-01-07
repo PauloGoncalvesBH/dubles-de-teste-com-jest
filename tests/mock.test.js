@@ -1,7 +1,7 @@
 const src = require('../src')
 const mockedAxios = require('axios')
 
-describe('mock', () => {
+describe('Mock', () => {
   afterEach(() => jest.restoreAllMocks())
 
   /*

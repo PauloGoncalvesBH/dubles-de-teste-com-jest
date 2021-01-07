@@ -8,7 +8,7 @@
     "url": "git+https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest.git"
   },
   "scripts": {
-    "test": "jest --collectCoverage true",
+    "test": "jest --collectCoverage true --silent",
     "test:watch": "jest --watch"
   },
   "dependencies": {
