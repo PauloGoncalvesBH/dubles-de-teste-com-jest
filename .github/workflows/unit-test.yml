@@ -4,6 +4,11 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      jest-cli:
+        description: 'Opção de Jest CLI'
+        required: false
+        default: ''
 
 jobs:
   unit-test:
@@ -17,5 +22,5 @@ jobs:
       uses: actions/setup-node@v2.1.1
     - name: Instalar as dependências do projeto
       run: npm ci
-    - name: Executar os testes de unidade
-      run: npm test
+    - name: Executar os testes de unidade ${{ github.event.inputs.jest-cli }}
+      run: npm test -- ${{ github.event.inputs.jest-cli }}
