@@ -1,6 +1,8 @@
 const src = require('../src')
 const axios = require('axios')
 
+jest.mock('../src/promiseTestModule')
+
 describe('Mock', () => {
   beforeEach(() => jest.clearAllMocks())
 
@@ -22,10 +24,10 @@ describe('Mock', () => {
   })
 
   /*
-  Mockando um módulo com mockResolvedValue()
+  Resolvendo uma Promise e mockando um módulo
   Mocking Modules - https://jestjs.io/docs/en/mock-functions#mocking-modules
   */
-  test('mockResolvedValue() - Mockando um módulo com mockResolvedValue()', async () => {
+  test('mockResolvedValue() - Resolvendo uma Promise e mockando um módulo', async () => {
     axios.get.mockResolvedValueOnce({
       data: {
         quantidade: 102030,
@@ -48,6 +50,17 @@ describe('Mock', () => {
     })
     expect(user.quantidade).toBe(102030)
     expect(user.usuarios[0].email).toBe('fulano.teste@qa.com')
+  })
+
+  /*
+  Rejeitando uma Promise e mockando um módulo
+  Mocking Modules - https://jestjs.io/docs/en/mock-function-api#mockfnmockrejectedvaluevalue
+  */
+  test('mockRejectedValue() - Rejeitando uma Promise e mockando um módulo', () => {
+    const promiseTest = require('../src/promiseTestModule')
+    promiseTest.mockRejectedValueOnce('Promise mockada')
+
+    src.consumirPromise(true)
   })
 
   /*

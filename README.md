@@ -12,7 +12,8 @@ Os testes foram implementados em [`/tests`](/tests), consumindo os métodos de [
 
 - Mock, em [./tests/mock.test.js](tests/mock.test.js)
   - [`Manual Mock`](https://jestjs.io/docs/en/manual-mocks) - Mockando um módulo manualmente
-  - [`mockResolvedValue()`](https://jestjs.io/docs/en/mock-functions#mocking-modules) - Mockando um módulo com mockResolvedValue()
+  - [`mockResolvedValue()`](https://jestjs.io/docs/en/mock-functions#mocking-modules) - Resolvendo uma Promise e mockando um módulo
+  - [`mockRejectedValue()`](https://jestjs.io/docs/en/mock-function-api#mockfnmockrejectedvaluevalue) - Rejeitando uma Promise e mockando um módulo
   - [`mockFn.mockImplementation(fn)`](https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationfn) - Mockando um método
   - [`mockFn.mockImplementationOnce(fn)`](https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationoncefn) - Mockando um método na primeira 
 e segunda chamada

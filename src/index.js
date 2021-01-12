@@ -1,5 +1,7 @@
 const axios = require('axios')
 
+const promiseTest = require('./promiseTestModule')
+
 // métodos utilizados em spy.test.js
 
 function exception () {
@@ -29,9 +31,16 @@ const getQuantidadeFromUserByEmail = async (email) => {
   return quantidade
 }
 
+const consumirPromise = resolver => {
+  promiseTest(resolver)
+    .then((e) => console.log(e))
+    .catch((error) => console.error(error))
+}
+
 module.exports = {
   exception,
   pessoa,
   getUserByEmail,
-  getQuantidadeFromUserByEmail
+  getQuantidadeFromUserByEmail,
+  consumirPromise
 }
