@@ -23,14 +23,9 @@ e segunda chamada
 
 ## Execução
 
-Instale as dependências com o comando:
+Instale as dependências e execute os testes com:
 ```
-npm install
-```
-
-Execute os testes com:
-```
-npm test
+npm it
 ```
 
 ## Materiais de apoio
