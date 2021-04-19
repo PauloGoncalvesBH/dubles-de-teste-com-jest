@@ -1,5 +1,9 @@
 # Dublês de teste com [Jest](https://www.npmjs.com/package/jest) [![Testes unitários](https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest/workflows/Testes%20unit%C3%A1rios/badge.svg)](https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest/actions)
 
+<div align="center">
+<i>Esse material é quase de graça, basta deixar uma star ⭐ no <a href="https://github.com/PauloGoncalvesBH/dubles-de-teste-com-jest">repositório</a>.</i>
+</div>
+
 ## Sobre
 
 Esse projeto é para servir de material pessoal de consulta de como implementar dublês de testes utilizando Jest.
