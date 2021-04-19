@@ -30,6 +30,8 @@ npm it
 
 ## Materiais de apoio
 
+- [Estudo de como é a implementação interna de um spy, mock, expect e estrutura dos testes](https://github.com/PauloGoncalvesBH/my-framework-test)
+
 ### Documentação do Jest
 - [Jest Object](https://jestjs.io/docs/en/jest-object)
 - [Expect](https://jestjs.io/docs/en/expect)
